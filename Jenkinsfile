@@ -27,7 +27,7 @@ pipeline {
             steps {
                 echo 'Iniciando o estágio de Teste...'
                 sh 'pip install -r requirements.txt'
-                sh 'pytest --junitxml=test-results.xml tests/'
+                sh 'pytest -v --junitxml=test-results.xml tests/'
             }
             post {
                 always {
