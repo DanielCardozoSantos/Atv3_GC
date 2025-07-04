@@ -1,4 +1,4 @@
-def fahrenheit_para_celsius(f):
+def fahrenheit_para_celsius(f)
     #Converte temperatura de Fahrenheit para Celsius.
     celsius = (f - 32) * 5 / 9
     return celsius
