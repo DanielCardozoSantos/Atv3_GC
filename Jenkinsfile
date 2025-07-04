@@ -4,7 +4,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Container  Build') {
             agent {
                 docker {
                     image 'python:3.9-slim'
@@ -12,12 +12,12 @@ pipeline {
                 }
             }
             steps {
-                echo 'Iniciando o estágio de Build...'
+                echo 'Iniciando o Build...'
                 sh 'pip install -r requirements.txt'
                 echo 'Build concluído com sucesso!'
             }
         }
-        stage('Test') {
+        stage('Container Test') {
             agent {
                 docker {
                     image 'python:3.9-slim'
@@ -25,7 +25,7 @@ pipeline {
                 }
             }
             steps {
-                echo 'Iniciando o estágio de Teste...'
+                echo 'Iniciando o Teste...'
                 sh 'pip install -r requirements.txt'
                 sh 'pytest -v --junitxml=test-results.xml tests/'
             }
